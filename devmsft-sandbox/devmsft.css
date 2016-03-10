@@ -6,22 +6,29 @@
 body {
     color: black;
     background: white;
-    min-width: 410px;
+    min-width: 320px;
 }
 
+a {
+    text-decoration: none;
+}
+
+
+
 body,
-.resourcelist > div > h3 {
+#build > p > a {
     font-weight: normal;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#build > h1,
-.resourcelist > div > h2 {
-    font-weight: bold;
-    font-family: "Segoe UI Bold", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+.resourcelist > div > h2,
+.resourcelist > div > p > a {
+    font-weight: 600;
+    font-family: "Segoe UI Semibold", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#build > h2 {
+#build > h2,
+.resourcelist > div > h3 {
     font-weight: 300;
     font-family: "Segoe UI Semilight", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -31,19 +38,23 @@ body,
     font-family: "Segoe UI Light", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
+
 #header {
-    padding: 10px 0 5px 70px;
+    margin: 30px 0;
+    text-align: center;
 }
 
 #header > img {
-    height: 21px;
+    height: 32px;
 }
 
+
+
 #footer {
-    margin-top: 160px;
+    margin: 70px 0 60px 0;
     padding: 20px 70px;
-    background: #eee;
-    font-size: 12px;
+    font-size: 10pt;
 }
 
 #footer:after {
@@ -53,23 +64,28 @@ body,
     height: 0;
 }
 
+#footer > img {
+    height: 20px;
+}
+
 #footer > div {
     float: right;
 }
 
-#footer > div:first-child {
-    float: left;
-}
-
 #footer > div > p {
     display: inline-block;
-    margin: 0 10px;
+    margin: 0 5px;
 }
 
-#footer > div > p > a {
-    color: #333;
-    text-decoration: none;
+#footer > div > p > a,
+#footer > div > p > a:link,
+#footer > div > p > a:visited,
+#footer > div > p > a:hover,
+#footer > div > p > a:active {
+    color: black;
 }
+
+
 
 #build {
     width: 100%;
@@ -80,61 +96,75 @@ body,
     color: white;
 }
 
-#build > h1 {
+#build > img {
     margin: 82px 20px 0 20px;
-    font-size: 34px;
-    line-height: 56px;
+    height: 96px;
 }
 
 #build > h2 {
-    margin: 13px 20px 0 20px;
-    font-size: 20px;
-    line-height: 24px;
+    margin: 30px auto;
+    padding: 0 50px;
+    font-size: 24pt;
+    max-width: 1000px;
 }
 
-#build > p {
-    margin: 45px 0 77px 0;
+#build > p.watch {
+    margin: 55px 0 80px 0;
+    font-size: 16pt;
 }
 
-#build > p > button {
-    height: 32px;
-    background: none;
+#build > p.watch > a {
     border: 2px solid white;
-    outline: none;
-    color: white;
-    cursor: pointer;
-    padding: 0 25px;
+    padding: 10px 35px;
 }
 
-#build > p > button:hover {
-    background: white;
-    color: black;
+#build > p.watch > a,
+#build > p.watch > a:link,
+#build > p.watch > a:visited {
+    color: white;
 }
+
+#build > p.watch > a:hover,
+#build > p.watch > a:active {
+    background: white;
+    color: #1f3d49;
+}
+
+#build > p.description {
+    margin: 0 50px 50px 50px;
+    font-size: 12pt;
+    opacity: 0.66;
+}
+
+#build > p.description > span {
+    margin: 0 10px;
+}
+
+
 
 .resourcelist {
     text-align: center;
-    margin: 0 45px;
 }
 
 .resourcelist.primary {
-    margin-top: 76px;
+    margin-top: 85px;
 }
 
 .resourcelist.secondary {
-    margin-top: 94px;
+    margin-top: 120px;
+    padding: 75px 0 90px 0;
+    background: #f7f7f7;
 }
 
 .resourcelist > h1 {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 20pt;
 }
 
 .resourcelist > div {
     display: inline-block;
     vertical-align: top;
-    width: 230px;
-    line-height: 20px;
-    margin: 52px 45px 0 45px;
+    width: 220px;
+    margin: 70px 45px 0 45px;
 }
 
 .resourcelist > div > img {
@@ -142,19 +172,26 @@ body,
 }
 
 .resourcelist > div > h2 {
-    margin-top: 48px;
-    font-size: 18px;
+    margin-top: 25px;
+    font-size: 14pt;
 }
 
 .resourcelist.secondary > div > h2 {
     margin-top: 0;
+    height: 3em;
+    line-height: 3em;
+}
+
+.resourcelist.secondary > div > h2.multiline {
+    line-height: 1.4em;
 }
 
 .resourcelist > div > h3 {
     margin-top: 9px;
-    font-size: 15px;
-    color: rgba(0, 0, 0, 0.6);
+    font-size: 11pt;
 }
+
+
 
 .resourcelist > div > ul {
     margin-top: 30px;
@@ -162,8 +199,16 @@ body,
 }
 
 .resourcelist > div li {
-    font-size: 15px;
+    font-size: 10pt;
     margin-top: 20px;
+}
+
+.resourcelist > div li > a,
+.resourcelist > div li > a:link,
+.resourcelist > div li > a:visited,
+.resourcelist > div li > a:hover,
+.resourcelist > div li > a:active {
+    color: black;
 }
 
 .resourcelist > div > p {
@@ -171,7 +216,108 @@ body,
 }
 
 .resourcelist > div > p > a {
-    font-size: 12px;
-    color: rgba(0, 0, 0, 0.6);
-    text-decoration: none;
+    font-size: 10pt;
+    border-style: solid;
+    border-width: 1px;
+    padding: 5px 12px 6px 12px;
+}
+
+#sec-windows,
+#sec-windows li > a,
+#sec-windows li > a:link,
+#sec-windows li > a:visited {
+    color: #0078d7;
+}
+
+#sec-windows li > a:hover,
+#sec-windows li > a:active {
+    color: #005fbe;
+}
+
+#sec-azure,
+#sec-azure li > a,
+#sec-azure li > a:link,
+#sec-azure li > a:visited {
+    color: #329fd8;
+}
+
+#sec-azure li > a:hover,
+#sec-azure li > a:active {
+    color: #1986bf;
+}
+
+#sec-vs,
+#sec-vs li > a,
+#sec-vs li > a:link,
+#sec-vs li > a:visited {
+    color: #5c2e91;
+}
+
+#sec-vs li > a:hover,
+#sec-vs li > a:active {
+    color: #431578;
+}
+
+#sec-office,
+#sec-office li > a,
+#sec-office li > a:link,
+#sec-office li > a:visited {
+    color: #dc3c00;
+}
+
+#sec-office li > a:hover,
+#sec-office li > a:active {
+    color: #c32300;
+}
+
+#sec-windows > p > a,
+#sec-windows > p > a:link,
+#sec-windows > p > a:visited {
+    color: #0078d7;
+    border-color: #0078d7;
+}
+
+#sec-windows > p > a:hover,
+#sec-windows > p > a:active {
+    background: #0078d7;
+    color: white;
+}
+
+#sec-azure > p > a,
+#sec-azure > p > a:link,
+#sec-azure > p > a:visited {
+    color: #329fd8;
+    border-color: #329fd8;
+}
+
+#sec-azure > p > a:hover,
+#sec-azure > p > a:active {
+    background: #329fd8;
+    color: white;
+}
+
+#sec-vs > p > a,
+#sec-vs > p > a:link,
+#sec-vs > p > a:visited {
+    color: #5c2e91;
+    border-color: #5c2e91;
+}
+
+#sec-vs > p > a:hover,
+#sec-vs > p > a:active {
+    background: #5c2e91;
+    color: white;
+}
+
+#sec-office > p > a,
+#sec-office > p > a:link,
+#sec-office > p > a:visited {
+    color: #dc3c00;
+    border-color: #dc3c00;
+}
+
+#sec-office > p > a:hover,
+#sec-office > p > a:active {
+    background: #dc3c00;
+    color: white;
 }
